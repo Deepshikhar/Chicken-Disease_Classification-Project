@@ -62,7 +62,6 @@ def main():
         pipeline = PredictionPipeline("temp.jpg")
         prediction = pipeline.predict()
         prediction_value = prediction[0]['image']
-        print(prediction_value)
         
         col1, col2 = st.columns([1,1])
 
