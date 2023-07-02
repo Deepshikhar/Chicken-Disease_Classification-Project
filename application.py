@@ -49,7 +49,7 @@ def main():
 
     st.title("Chicken-Disease-Classifier Using VGG16")
     
-    uploaded_file = st.file_uploader("Upload an Chicken Fecal image", type=["jpg", "jpeg","png"])
+    uploaded_file = st.file_uploader("Upload a Chicken's Fecal image", type=["jpg", "jpeg","png"])
 
     if uploaded_file is not None:
         # Save the uploaded file to a temporary location
