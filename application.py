@@ -88,7 +88,7 @@ def main():
             st.sidebar.write(f"**{key}:** {value}")
     #>>>>>>>>>>>>>>>>>>>>>
 
-    logs_directory = '/Users/deepshikhar/Desktop/Projects/Chicken-Disease_Classification-Project/artifacts/prepare_callbacks/tensorboard_log_dir'
+    logs_directory = 'artifacts/prepare_callbacks/tensorboard_log_dir'
     show_tensorboard = st.sidebar.checkbox('Show Tensorboard Log Directory') 
 
     if show_tensorboard:
