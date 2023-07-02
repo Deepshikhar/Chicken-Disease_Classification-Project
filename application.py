@@ -15,17 +15,15 @@ def load_params():
         params = yaml.safe_load(f)
     return params
 
-
-
 # def save_params(params):
 #     # Save the updated training parameters to the param.yaml file
 #     with open('params.yaml', 'w') as f:
 #         yaml.safe_dump(params, f, default_style='', default_flow_style=False)
 
-def execute_dvc_stage(stage_name):
-    # Execute the DVC stage
-    cmd = f"dvc repro -s {stage_name}"
-    subprocess.run(cmd.split(), check=True)
+# def execute_dvc_stage(stage_name):
+#     # Execute the DVC stage
+#     cmd = f"dvc repro -s {stage_name}"
+#     subprocess.run(cmd.split(), check=True)
 
 def load_training_metrics():
     # Load the training metrics from the scores.json file
@@ -45,14 +43,13 @@ def load_training_metrics():
     return df
 
 
-
 def main():
 
-    # >>>>>>>>>>>>
+    # >>>>>>>>>>>>Classifier>>>>>>>>>>>>>>>>>
 
     st.title("Chicken-Disease-Classifier Using VGG16")
     
-    uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg","png"])
+    uploaded_file = st.file_uploader("Upload an Chicken Fecal image", type=["jpg", "jpeg","png"])
 
     if uploaded_file is not None:
         # Save the uploaded file to a temporary location
@@ -72,7 +69,7 @@ def main():
             st.markdown("### Model Prediction")
             col2.write(prediction_value)
 
-    # >>>>>>>>>>>>
+    # >>>>>>>>>>>>Sidebar for param >>>>>>>>>>>>>>>>>
     
     show_params = st.sidebar.checkbox('Show Parameters Configurations') 
 
@@ -85,7 +82,8 @@ def main():
         # Display the params.yaml file in a decorative format
         for key, value in params.items():
             st.sidebar.write(f"**{key}:** {value}")
-    #>>>>>>>>>>>>>>>>>>>>>
+    
+    # >>>>>>>>>>>>Sidebar for tensorboard >>>>>>>>>>>>>>>>>
 
     logs_directory = 'artifacts/prepare_callbacks/tensorboard_log_dir'
     show_tensorboard = st.sidebar.checkbox('Show Tensorboard Log Directory') 
@@ -107,21 +105,7 @@ def main():
             # Display the TensorBoard logs
             st_tensorboard(logdir=logs_directory)
 
-
-    # >>>>>>>>>>>>>>>>>>>
-
-    
-
-    # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    # st.title("Model Training Visualization")
-
-
-    # # Execute the 'training' stage if requested
-    # run_training = st.button("Run Training")
-    # if run_training:
-    #     execute_dvc_stage("training")
-
-
+    # >>>>>>>>>>>>Sidebar for METRICS >>>>>>>>>>>>>>>>>
     # Check if the training artifacts exist
     training_artifacts_exist = st.sidebar.checkbox("Check Training Artifacts Existence")
 
