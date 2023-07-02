@@ -8,7 +8,7 @@ import json
 import tensorflow as tf
 import yaml
 from streamlit_tensorboard import st_tensorboard
-
+st.set_page_config
 def load_params():
     # Load the training parameters from the param.yaml file
     with open('params.yaml') as f:
