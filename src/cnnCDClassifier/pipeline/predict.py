@@ -14,7 +14,7 @@ class PredictionPipeline:
     def predict(self):
         # load model
 
-        model = load_model("artifacts/training/model.h5")
+        model = load_model("/Users/deepshikhar/Desktop/Projects/Chicken-Disease_Classification-Project/artifacts/training/model.h5")
 
         imagename = self.filename
         test_image = image.load_img(imagename, target_size = (224,224))
