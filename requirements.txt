@@ -3,7 +3,6 @@ streamlit-tensorboard==0.0.2
 tensorflow
 pandas 
 dvc
-notebook
 numpy
 matplotlib
 seaborn
@@ -16,4 +15,5 @@ types-PyYAML
 scipy
 Flask
 Flask-Cors
+backports.zoneinfo==0.2.1;python_version<"3.9"
 -e .
