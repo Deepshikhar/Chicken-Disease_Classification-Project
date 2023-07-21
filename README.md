@@ -1,4 +1,4 @@
-Application Link : \href{https://chicken-diseaseclassification-project.streamlit.app}
+[Application Link](https://chicken-diseaseclassification-project.streamlit.app)
 # Chicken-Disease_Classification-Project
 
 ## Workflows
